@@ -1,0 +1,63 @@
+rules_version = '2';
+
+// Peraturan keselamatan Firestore untuk laman RSVP Khadizah & Anwar.
+//
+// APA MAKSUDNYA (bahasa biasa):
+// Ini "pengawal pintu" pangkalan data. Ia benarkan sesiapa sahaja HANTAR
+// (create) dan BACA (read) RSVP, tapi TOLAK ubah (update) dan padam (delete)
+// supaya tiada siapa boleh usik entri orang lain. Semua collection lain
+// ditolak secara lalai.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Collection RSVP: benarkan create + read untuk semua, tolak update/delete.
+    match /rsvp/{doc} {
+      allow read: if true;
+
+      allow create: if
+        // Hanya lima medan ini dibenarkan, tiada medan asing.
+        request.resource.data.keys().hasOnly(['nama', 'status', 'pax', 'ucapan', 'masa'])
+        // Nama: string 1 hingga 80 aksara.
+        && request.resource.data.nama is string
+        && request.resource.data.nama.size() >= 1
+        && request.resource.data.nama.size() <= 80
+        // Status: hanya "hadir" atau "tidak".
+        && request.resource.data.status in ['hadir', 'tidak']
+        // Pax: nombor 0 hingga 10.
+        && request.resource.data.pax is number
+        && request.resource.data.pax >= 0
+        && request.resource.data.pax <= 10
+        // Ucapan: string, maksimum 1000 aksara.
+        && request.resource.data.ucapan is string
+        && request.resource.data.ucapan.size() <= 1000
+        // Masa: mesti cap masa pelayan (serverTimestamp), bukan nilai palsu.
+        && request.resource.data.masa == request.time;
+
+      allow update, delete: if false;
+    }
+
+    // Collection SAYANG: reaksi "sayang" pada ucapan. Create + read sahaja,
+    // ikut corak /rsvp , tiada update/delete, tiada auth, tiada usik /rsvp.
+    match /sayang/{doc} {
+      allow read: if true;
+
+      allow create: if
+        // Dua medan sahaja, tiada medan asing.
+        request.resource.data.keys().hasOnly(['ucapanId', 'masa'])
+        // ucapanId = id dokumen rsvp yang disayang (string pendek).
+        && request.resource.data.ucapanId is string
+        && request.resource.data.ucapanId.size() >= 1
+        && request.resource.data.ucapanId.size() <= 80
+        // Masa: mesti cap masa pelayan sebenar (elak nilai palsu).
+        && request.resource.data.masa == request.time;
+
+      allow update, delete: if false;
+    }
+
+    // Semua collection lain: tolak sepenuhnya.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

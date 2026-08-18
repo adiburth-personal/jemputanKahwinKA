@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Khadizah &amp; Anwar , Jemputan Walimatulurus</title>
+  <meta name="description" content="Jemputan Majlis Perkahwinan Khadizah & Anwar, Ahad 30 Ogos 2026, ADH Hall Kota Marudu." />
+
+  <!-- Open Graph / Twitter: preview kaya bila link disebar di WhatsApp/media sosial -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Khadizah & Anwar" />
+  <meta property="og:title" content="Jemputan Walimatulurus Khadizah & Anwar" />
+  <meta property="og:description" content="Ahad, 30 Ogos 2026, ADH Hall Kota Marudu. Sudi sudikanlah meraikan hari bahagia kami." />
+  <meta property="og:url" content="https://adiburth-personal.github.io/jemputanKahwinKA/" />
+  <meta property="og:image" content="https://adiburth-personal.github.io/jemputanKahwinKA/ogImage.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jemputan Walimatulurus Khadizah & Anwar" />
+  <meta name="twitter:description" content="Ahad, 30 Ogos 2026, ADH Hall Kota Marudu. Sudi sudikanlah meraikan hari bahagia kami." />
+  <meta name="twitter:image" content="https://adiburth-personal.github.io/jemputanKahwinKA/ogImage.png" />
+
+  <!-- Font (semua display=swap; kegagalan CDN jatuh ke serif sistem, halaman tak
+       pernah kosong): Alex Brush (hos sendiri) = nama/kepala script; Great Vibes
+       kekal dimuat sebagai FALLBACK script; Cormorant SC = label besar berjarak;
+       EB Garamond = badan serif + ampersand identiti italic. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+SC:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <!-- styles.css: token warna disahkan + aset bunga ambient (WebKit selamat) +
+       reduced-motion. landing.css: susun atur khas laman jemputan (dimuat selepas,
+       jadi menang atas mana mana pertindihan). -->
+  <!-- KONVENSYEN VERSI ASET (?v=): CDN GitHub Pages tamat cache HTML dan JS/CSS pada
+       masa BERBEZA; pernah berlaku index.html baru dihidang dengan landing.js lama dan
+       feed ucapan terbiar kosong. Sebab tu SEMUA pasangan HTML+JS/CSS guna query ?v=,
+       dan nilai v WAJIB ditukar pada SETIAP commit yang mengubah pasangan tersebut
+       (semua halaman awam: index, rsvp, ucapan, pengantin). -->
+  <link rel="stylesheet" href="./styles.css?v=20260819a" />
+  <link rel="stylesheet" href="./landing.css?v=20260819a" />
+  <!-- KENAPA preload: bouquet hero perlu siap sebelum gerbang terbuka (halaman di
+       sebalik pintu mesti lengkap bila tanah menipis, bukan kotak kosong menyusul).
+       Font basmala (Aref Ruqaa subset arab, hos sendiri, lesen SIL OFL) pun dipreload
+       sebab ia glyph pertama yang tetamu nampak di cover. -->
+  <link rel="preload" as="image" href="./aset/bunga/warnaBouquetHero.webp" />
+  <link rel="preload" as="image" href="./aset/bunga/warnaBouquetB.webp" />
+  <!-- Flora plum frontispiece cover: paparan pertama tetamu, mesti siap sebelum paint. -->
+  <link rel="preload" as="image" href="./aset/bunga/cvBouquetBesar.webp" />
+  <link rel="preload" as="image" href="./aset/bunga/cvFuchsia.webp" />
+  <link rel="preload" as="font" type="font/woff2" href="./aset/font/arefRuqaaArab.woff2" crossorigin />
+  <!-- Script identiti nama (Alex Brush, hos sendiri, SIL OFL): dipreload sebab nama
+       pasangan ialah elemen pertama paling penting di cover. -->
+  <link rel="preload" as="font" type="font/woff2" href="./aset/font/alexBrushLatin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="./aset/font/playfairAmp.woff2" crossorigin />
+
+  <!-- Penanda "JS hidup": kalau modul landing.js gagal muat, seksyen reveal TIDAK
+       disorok (CSS hanya sorok bila .lp-js ada), jadi kandungan tak pernah kosong. -->
+  <script>document.documentElement.className += " lp-js";</script>
+  <!-- Tema LILAC kini RUPA DEFAULT semua pengunjung: tambah kelas lp-lilac SEAWAL
+       mungkin dalam <head> supaya latar/warna lilac dicat terus tanpa kelip (elak FOUC),
+       sama corak penanda lp-js di atas. Lilac diaktif untuk SEMUA muat KECUALI bila
+       ?tema=kraft diberi (kraft dikekalkan sebagai fallback tersembunyi untuk patah
+       balik). ?tema=lilac kekal berfungsi (idempotent, classList.add tak berganda).
+       Defensif: sebarang ralat diabaikan (kandungan tetap terpapar). -->
+  <script>try{if(new URLSearchParams(location.search).get("tema")!=="kraft")document.documentElement.classList.add("lp-lilac");}catch(e){}</script>
+  <!-- JARING KESELAMATAN reveal: seksyen .reveal disorok (opacity 0) HANYA bila .lp-js
+       wujud, dan is-lihat ditambah oleh landing.js. Kalau modul landing.js GAGAL muat
+       (rangkaian putus, ralat sintaks, CSP), is-lihat tak pernah datang -> kandungan
+       kekal telus selama-lamanya. Penjaga: landing.js tanda window.__lpSedia = true
+       SEBAIK ia mula. Kalau selepas ~3s penanda itu masih tiada, kita anggap modul mati
+       dan BUANG kelas lp-js supaya SEMUA kandungan terpapar statik (degradasi anggun).
+       Defensif: sebarang ralat diabaikan. -->
+  <script>window.setTimeout(function(){try{if(!window.__lpSedia)document.documentElement.classList.remove("lp-js");}catch(e){}},3000);</script>
+</head>
+<body class="lp">
+
+  <!-- ============ AMBIENT GUTTER (desktop): bunga ungu hanyut di latar gelap ============
+       Guna semula kelas .ambient + .bunga dari styles.css (SVG kelopak eksplisit,
+       disahkan sama di WebKit & Chromium, dimatikan oleh reduced-motion). Bunga muncul
+       di ruang kiri/kanan kad; kad berlatar hangat legap menutupnya di tengah. Tiada
+       teks duduk atas gutter, jadi tiada kebimbangan kontras di sini. -->
+  <div class="ambient" aria-hidden="true">
+    <i class="bunga bunga--aDeep"   style="--x:5%;   --size:26px; --dur:34s; --delay:-3s;  --drift:22px; --op:0.5; --spin:16deg;  --blur:0.8px"></i>
+    <i class="bunga bunga--bMid"    style="--x:12%;  --size:18px; --dur:42s; --delay:-14s; --drift:-16px;--op:0.42;--spin:-14deg; --blur:0.4px"></i>
+    <i class="bunga bunga--aBright" style="--x:9%;   --size:14px; --dur:30s; --delay:-9s;  --drift:14px; --op:0.4; --spin:22deg;  --blur:0"></i>
+    <i class="bunga bunga--bRose"   style="--x:3%;   --size:12px; --dur:38s; --delay:-20s; --drift:-12px;--op:0.38;--spin:-18deg; --blur:0"></i>
+    <i class="bunga bunga--aMid"    style="--x:16%;  --size:20px; --dur:46s; --delay:-6s;  --drift:18px; --op:0.4; --spin:14deg;  --blur:0.6px"></i>
+    <i class="bunga bunga--bBright" style="--x:88%;  --size:24px; --dur:36s; --delay:-16s; --drift:-20px;--op:0.5; --spin:-16deg; --blur:0.8px"></i>
+    <i class="bunga bunga--aRose"   style="--x:94%;  --size:16px; --dur:40s; --delay:-2s;  --drift:16px; --op:0.4; --spin:20deg;  --blur:0.3px"></i>
+    <i class="bunga bunga--bDeep"   style="--x:91%;  --size:13px; --dur:31s; --delay:-24s; --drift:-14px;--op:0.42;--spin:12deg;  --blur:0"></i>
+    <i class="bunga bunga--aMid"    style="--x:84%;  --size:19px; --dur:44s; --delay:-11s; --drift:20px; --op:0.4; --spin:-20deg; --blur:0.5px"></i>
+    <i class="bunga bunga--bBright" style="--x:97%;  --size:14px; --dur:33s; --delay:-27s; --drift:-16px;--op:0.4; --spin:18deg;  --blur:0"></i>
+  </div>
+
+  <!-- ============ GUTTER BOTANI (desktop): sprig menjalar mengapit kad ============
+       Dua sprig tinggi (sage + baby's-breath + batang kering beige + bunga kecil) di
+       ruang gutter kiri/kanan kad, bingkai kad seolah tumbuh dari taman. Tampil HANYA
+       >=1024px (gutter cukup lebar); sway sangat halus, mati dengan reduced-motion.
+       Tiada teks di gutter -> tiada isu kontras. -->
+  <div class="lp-gutter-botani" aria-hidden="true">
+    <span class="lp-botani lp-gb lp-gb--kiri lp-rb-babys"></span>
+    <span class="lp-botani lp-gb lp-gb--kanan lp-rb-babys"></span>
+    <!-- Anchor besar desktop: selepas sage dibuang, gutter mauve >=1024 jadi hamparan
+         kosong (dapatan judge visual); bunga menjenguk dari belakang kad, selang sisi. -->
+    <span class="lp-botani lp-gb lp-gb--kanan3 lp-rb-blush"></span>
+    <span class="lp-botani lp-gb lp-gb--kiri2 lp-bouquet-a"></span>
+    <span class="lp-botani lp-gb lp-gb--kanan2 lp-rb-bouquet3"></span>
+    <span class="lp-botani lp-gb lp-gb--kiri3 lp-rb-rosburg"></span>
+  </div>
+
+  <!-- ============ COVER "FRONTISPIECE MANUSKRIP" (sampul, tekan untuk buka) ============
+       Konsep: muka hadapan kitab beriluminasi. Bingkai ruling ganda emas (tebal-nipis,
+       bahasa manuskrip) + berlian bucu; dalam bingkai: basmala kaligrafi sebagai JANTUNG,
+       nama pasangan dinobat macam tajuk kitab, monogram K&A diturunkan jadi MOHOR kecil
+       (seal penerbit) di kaki. Flora duotone plum tonal melimpah dua bucu bingkai
+       (bukan sticker warna atas gelap). Tekan mana mana = buka.
+       CSS sorok cover bila kelas lp-js tiada (JS mati), jadi kandungan tak terperangkap. -->
+  <div class="lp-cover" id="lpCover" role="button" tabindex="0" aria-label="Tekan untuk membuka jemputan">
+    <!-- TUDUNG (transisi Gerbang Emas): lapisan plum separa lutsinar ANTARA halaman
+         dan gerbang; ia mengawal pendedahan halaman (elak flash terang) dan larut
+         820-1800ms. Idle: tak kelihatan (tanah gerbang legap di atasnya). -->
+    <div class="lp-tudung" aria-hidden="true"></div>
+    <!-- GERBANG: tanah gelap + bingkai ruling + bunga bucu dalam SATU kumpulan supaya
+         semuanya meluas BERSAMA (scale 2.8) bila tetamu "melangkah masuk" menembusi
+         ambang. Latar cover dipindah ke sini (dolly-through perlukan tanah yang
+         boleh diskala + dipudar, background elemen tak boleh). -->
+    <div class="lp-gerbang" aria-hidden="true">
+      <div class="lp-bingkai">
+        <span class="lp-bingkai-bucu lp-bingkai-bucu--tl"></span>
+        <span class="lp-bingkai-bucu lp-bingkai-bucu--tr"></span>
+        <span class="lp-bingkai-bucu lp-bingkai-bucu--bl"></span>
+        <span class="lp-bingkai-bucu lp-bingkai-bucu--br"></span>
+      </div>
+      <span class="lp-deko lp-bunga-cover lp-bunga-cover--tr lp-cv-plum-a"></span>
+      <span class="lp-deko lp-bunga-cover lp-bunga-cover--bl lp-cv-plum-b"></span>
+      <span class="lp-deko lp-bunga-cover lp-og-only lp-bunga-cover--tl lp-cv-plum-b"></span>
+      <span class="lp-deko lp-bunga-cover lp-og-only lp-bunga-cover--br lp-cv-plum-a"></span>
+    </div>
+    <div class="lp-cover-inner">
+      <!-- Dua kumpulan TINTA (transisi Gerbang Emas): lapis A (basmala + pemisah +
+           eyebrow) terangkat dulu 120ms, lapis B (nama + tarikh + penutup) menyusul
+           260ms, parallax dua kelajuan macam tinta terangkat dari muka surat. -->
+      <div class="lp-tintaA">
+        <!-- BASMALA kaligrafi ruqaa: JANTUNG frontispiece (permintaan user: Jawi). Satu
+             aksara ligatur U+FDFD font Aref Ruqaa subset hos sendiri (SIL OFL). Teks
+             sebenar, bukan imej: tajam semua DPR. -->
+        <p class="lp-cover-atas" lang="ar" dir="rtl" aria-label="Bismillahirrahmanirrahim">&#xFDFD;</p>
+
+        <!-- Pemisah ruling: hairline menirus + berlian, bahasa ornament yang sama
+             dengan hero/panel (identiti berulang, bukan hiasan baru). -->
+        <div class="lp-cover-pemisah" aria-hidden="true">
+          <span class="lp-cover-pemisah-garis lp-cover-pemisah-garis--kiri"></span>
+          <span class="lp-cover-pemisah-berlian"></span>
+          <span class="lp-cover-pemisah-garis lp-cover-pemisah-garis--kanan"></span>
+        </div>
+
+        <p class="lp-cover-eyebrow">Walimatulurus</p>
+      </div>
+      <div class="lp-tintaB">
+        <!-- Nama = TAJUK KITAB dan juga pembawa kelas guard .lp-mono: coverInit() perlukan
+             .lp-mono wujud untuk melepasi guard choreography (mohor K&A dibuang atas verdict
+             judge, nama penuh SENDIRI ialah monogram, tiada duplikasi identiti). -->
+        <p class="lp-cover-nama lp-mono lp-nama-3b">
+          <span class="lp-nb">Khadizah</span>
+          <span class="lp-amp-nama">&amp;</span>
+          <span class="lp-nb">Anwar</span>
+        </p>
+        <p class="lp-cover-tarikh">Ahad &middot; 30 Ogos 2026</p>
+
+        <!-- Penutup tajuk: hairline + berlian tunggal (motif keluarga yang sama), ganti
+             mohor supaya satu sahaja identiti nama di cover. aria-hidden: hiasan. -->
+        <div class="lp-cover-tamat" aria-hidden="true">
+          <span class="lp-cover-pemisah-garis lp-cover-pemisah-garis--kiri"></span>
+          <span class="lp-cover-pemisah-berlian"></span>
+          <span class="lp-cover-pemisah-garis lp-cover-pemisah-garis--kanan"></span>
+        </div>
+      </div>
+    </div>
+    <!-- CTA buka: kolofon di kaki bingkai (kedudukan tandatangan manuskrip), small-caps
+         diapit hairline menirus + berlian denyut. Seluruh cover kekal boleh tap. -->
+    <span class="lp-cover-buka">
+      <span class="lp-cover-buka-garis lp-cover-buka-garis--kiri" aria-hidden="true"></span>
+      <span class="lp-cover-buka-titik" aria-hidden="true"></span>
+      Tekan untuk buka
+      <span class="lp-cover-buka-titik lp-cover-buka-titik--b" aria-hidden="true"></span>
+      <span class="lp-cover-buka-garis lp-cover-buka-garis--kanan" aria-hidden="true"></span>
+    </span>
+  </div>
+
+  <!-- ============ KAD BENTUK TELEFON ============ -->
+  <main class="lp-kad" id="lpKad">
+
+    <!-- 1. HERO (dalam bingkai emas dua garis + kluster bunga 4 bucu) -->
+    <section class="lp-sec lp-hero reveal">
+      <div class="lp-hero-frame">
+        <span class="lp-deko lp-bunga-hero lp-bunga-hero--tl lp-bouquet-a" aria-hidden="true"></span>
+        <span class="lp-deko lp-bunga-hero lp-bunga-hero--tl2 bunga--bBright" aria-hidden="true"></span>
+        <span class="lp-deko lp-bunga-hero lp-bunga-hero--tr lp-bouquet-b" aria-hidden="true"></span>
+        <span class="lp-deko lp-bunga-hero lp-bunga-hero--tr2 bunga--aBright" aria-hidden="true"></span>
+        <span class="lp-deko lp-bunga-hero lp-bunga-hero--bl lp-bouquet-a" aria-hidden="true"></span>
+        <span class="lp-deko lp-bunga-hero lp-bunga-hero--br lp-bouquet-b" aria-hidden="true"></span>
+        <span class="lp-berlian lp-berlian--atas" aria-hidden="true"></span>
+
+        <p class="lp-bismillah" dir="rtl" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+        <p class="lp-eyebrow">Walimatulurus</p>
+        <h1 class="lp-nama-script lp-nama-3b">
+          <span class="lp-nb">Khadizah</span>
+          <span class="lp-amp-nama">&amp;</span>
+          <span class="lp-nb">Anwar</span>
+        </h1>
+        <div class="lp-divider" aria-hidden="true">
+          <svg viewBox="0 0 160 20" width="160" height="20" fill="none">
+            <path class="lp-divider-garis lp-divider-garis--kiri" d="M10 10h48" stroke="#bfa065" stroke-width="1" stroke-linecap="round"/>
+            <path class="lp-divider-garis lp-divider-garis--kanan" d="M102 10h48" stroke="#bfa065" stroke-width="1" stroke-linecap="round"/>
+            <path d="M74 10c3-4 6-5 8-3.5S82 11 78 12" stroke="#674b77" stroke-width="1" stroke-linecap="round"/>
+            <path d="M86 10c-3-4-6-5-8-3.5S78 11 82 12" stroke="#674b77" stroke-width="1" stroke-linecap="round"/>
+            <circle cx="80" cy="10" r="2.6" fill="#382443"/>
+            <circle cx="62" cy="10" r="1.6" fill="#bfa065"/>
+            <circle cx="98" cy="10" r="1.6" fill="#bfa065"/>
+          </svg>
+        </div>
+        <p class="lp-tarikh">Ahad, 30 Ogos 2026</p>
+        <span class="lp-berlian lp-berlian--bawah" aria-hidden="true"></span>
+      </div>
+      <!-- Kelopak hero LAMA dibuang: kelopak kini jatuh SELURUH halaman lewat lapisan
+           .lp-kelopak-lapis (permintaan user), lihat hujung <body>. -->
+    </section>
+
+    <!-- 2. SALAM + JEMPUTAN -->
+    <section class="lp-sec lp-salam-sec reveal">
+      <span class="lp-deko lp-botani lp-rb-babys lp-b-salam-kiri" aria-hidden="true"></span>
+      <p class="lp-salam">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+      <p class="lp-pantun">
+        Dari Kota Marudu kami mula,<br />
+        Menyusun kata mengukir bicara;<br />
+        Dengan hati yang penuh gembira,<br />
+        Kami jemput tuan meraikan bahagia.
+      </p>
+      <p class="lp-jemputan">
+        Dengan penuh rasa kesyukuran, kami
+      </p>
+      <p class="lp-ibubapa">Razali Bin Milek<br /><span class="lp-amp">&amp;</span><br />Juliana Simpokan</p>
+      <p class="lp-jemputan">
+        ingin menjemput Dato' / Datin / Tuan / Puan / Encik / Cik ke Majlis Perkahwinan puteri kami
+      </p>
+    </section>
+
+    <!-- 3. NAMA PENUH PENGANTIN -->
+    <section class="lp-sec lp-pengantin reveal">
+      <p class="lp-pengantin-nama">Khadizah Binti Razali</p>
+      <p class="lp-amp-besar" aria-hidden="true">&amp;</p>
+      <p class="lp-pengantin-nama">Muhammad Anwar Bin Sawal</p>
+    </section>
+
+    <!-- 4. BUTIRAN MAJLIS (sasaran dock "Tarikh"), lp-sec--panel atas permintaan user
+         15 Ogos: butiran duduk dalam box macam seksyen bawahnya. Zon kanvas berterusan
+         kini BERMULA di sini (lp-kanvas-mula dipindah dari Aturcara). -->
+    <section class="lp-sec lp-sec--panel lp-kanvas-mula lp-butiran reveal" id="tarikh">
+      <span class="lp-deko lp-botani lp-rb-sdaisy lp-b-butiran" aria-hidden="true"></span>
+      <div class="lp-butir">
+        <span class="lp-butir-ikon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
+            <rect x="3.5" y="5" width="17" height="15" rx="2.5" stroke="#6e2029" stroke-width="1.4"/>
+            <path d="M3.5 9.5h17M8 3.5v3M16 3.5v3" stroke="#6e2029" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="12" cy="14.5" r="1.7" fill="#bfa065"/>
+          </svg>
+        </span>
+        <p class="lp-butir-utama">Ahad, 30 Ogos 2026</p>
+        <p class="lp-butir-sub">bersamaan 17 Rabiulawal 1448H</p>
+      </div>
+      <div class="lp-butir">
+        <span class="lp-butir-ikon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
+            <circle cx="12" cy="12" r="8.5" stroke="#6e2029" stroke-width="1.4"/>
+            <path d="M12 7.2v5l3.2 2" stroke="#6e2029" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <p class="lp-butir-utama">11:00 pagi hingga 6:00 petang</p>
+      </div>
+      <div class="lp-butir">
+        <span class="lp-butir-ikon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
+            <path d="M12 21c4.2-4.2 6.3-7.6 6.3-10.6A6.3 6.3 0 0 0 5.7 10.4C5.7 13.4 7.8 16.8 12 21Z" stroke="#6e2029" stroke-width="1.4" stroke-linejoin="round"/>
+            <circle cx="12" cy="10.2" r="2.4" fill="#bfa065"/>
+          </svg>
+        </span>
+        <p class="lp-butir-utama">ADH Hall, Kota Marudu</p>
+      </div>
+    </section>
+
+    <!-- 5. ATURCARA MAJLIS (timeline menegak, dari kad rasmi)
+         lp-sec--panel (directive D1): seksyen utama duduk dalam PANEL lilac terapung
+         atas jalur kanvas mauve (lapisan kad rasmi), bukan hamparan rata.
+         lp-kepala (D3): kepala script besar ganti label kecil, pecah monotone. -->
+    <section class="lp-sec lp-sec--panel lp-aturcara reveal">
+      <span class="lp-deko lp-botani lp-rb-rosburg lp-b-atur-kanan" aria-hidden="true"></span>
+      <h2 class="lp-kepala">Aturcara Majlis</h2>
+      <ol class="lp-tl">
+        <li class="lp-tl-item">
+          <span class="lp-tl-titik" aria-hidden="true"></span>
+          <span class="lp-tl-masa">11:00 pagi</span>
+          <span class="lp-tl-acara">Ketibaan Tetamu</span>
+        </li>
+        <li class="lp-tl-item">
+          <span class="lp-tl-titik" aria-hidden="true"></span>
+          <span class="lp-tl-masa">12:00 tengah hari</span>
+          <span class="lp-tl-acara">Bersanding</span>
+        </li>
+        <li class="lp-tl-item">
+          <span class="lp-tl-titik" aria-hidden="true"></span>
+          <span class="lp-tl-masa">12:30 tengah hari</span>
+          <span class="lp-tl-acara">Sesi Bergambar 1</span>
+        </li>
+        <li class="lp-tl-item">
+          <span class="lp-tl-titik" aria-hidden="true"></span>
+          <span class="lp-tl-masa">1:00 petang</span>
+          <span class="lp-tl-acara">Jamuan Makan</span>
+        </li>
+        <li class="lp-tl-item">
+          <span class="lp-tl-titik" aria-hidden="true"></span>
+          <span class="lp-tl-masa">2:55 petang</span>
+          <span class="lp-tl-acara">Sesi Bergambar 2</span>
+        </li>
+        <li class="lp-tl-item">
+          <span class="lp-tl-titik" aria-hidden="true"></span>
+          <span class="lp-tl-masa">3:30 petang</span>
+          <span class="lp-tl-acara">Potong Kek</span>
+        </li>
+        <li class="lp-tl-item">
+          <span class="lp-tl-titik" aria-hidden="true"></span>
+          <span class="lp-tl-masa">6:00 petang</span>
+          <span class="lp-tl-acara">Bersurai</span>
+        </li>
+      </ol>
+      <div class="lp-ornamen" aria-hidden="true"><i></i></div>
+    </section>
+
+    <!-- 6. COUNTDOWN (lp-sec--panel: bersambung dengan panel aturcara atas jalur
+         mauve yang sama, dua panel terapung bersebelahan macam kad rasmi) -->
+    <section class="lp-sec lp-sec--panel lp-countdown-sec reveal">
+      <span class="lp-deko lp-botani lp-rb-sroskuning lp-b-cd-kiri" aria-hidden="true"></span>
+      <p class="lp-ayat">&ldquo;Dan Kami jadikan kamu berpasang-pasangan&rdquo;<span class="lp-ayat-rujuk">Surah An-Naba 78:8</span></p>
+      <p class="lp-label">Menghitung Hari</p>
+      <div class="lp-countdown" id="lpCountdown" aria-live="off">
+        <div class="lp-cd-kotak"><span class="lp-cd-nombor" id="cdHari">0</span><span class="lp-cd-label">Hari</span></div>
+        <div class="lp-cd-kotak"><span class="lp-cd-nombor" id="cdJam">0</span><span class="lp-cd-label">Jam</span></div>
+        <div class="lp-cd-kotak"><span class="lp-cd-nombor" id="cdMinit">0</span><span class="lp-cd-label">Minit</span></div>
+        <div class="lp-cd-kotak"><span class="lp-cd-nombor" id="cdSaat">0</span><span class="lp-cd-label">Saat</span></div>
+      </div>
+      <p class="lp-countdown-selesai" id="lpCountdownSelesai" hidden>Alhamdulillah, majlis selamat berlangsung</p>
+    </section>
+
+    <!-- 7. RSVP (dalam page, menuju borang) -->
+    <section class="lp-sec lp-sec--panel lp-rsvp reveal">
+      <p class="lp-label">Maklumat Kehadiran</p>
+      <p class="lp-teks">Sudi sudikanlah memaklumkan kehadiran anda sebelum 30 Ogos 2026 supaya kami dapat menyediakan sambutan yang sempurna buat anda.</p>
+      <a class="lp-btn-besar" href="./rsvp.html">RSVP</a>
+    </section>
+
+    <!-- 8. BUKU TETAMU (lp-sec--panel D1 + lp-kepala D3 + ornament emas D12) -->
+    <section class="lp-sec lp-sec--panel lp-buku reveal" id="bukuTetamu">
+      <span class="lp-deko lp-botani lp-rb-sdahlia lp-b-buku" aria-hidden="true"></span>
+      <h2 class="lp-kepala">Buku Tetamu</h2>
+      <!-- Variant tanpa baca ucapan: paparan feed + link "Lihat Semua Ucapan" dibuang.
+           Hanya CTA "Berikan Ucapan" (menuju borang rsvp.html) dikekalkan. -->
+      <p class="lp-teks">Sudi sudikanlah meninggalkan sepatah dua ucapan buat pasangan pengantin.</p>
+      <div class="lp-buku-butang">
+        <a class="lp-btn-halus" href="./rsvp.html">Berikan Ucapan</a>
+      </div>
+      <div class="lp-ornamen" aria-hidden="true"><i></i></div>
+    </section>
+
+    <!-- 9. HUBUNGI (sasaran dock "Hubungi") -->
+    <section class="lp-sec lp-sec--panel lp-hubungi reveal" id="hubungi">
+      <span class="lp-deko lp-botani lp-rb-poppy lp-b-hubungi" aria-hidden="true"></span>
+      <p class="lp-label">Hubungi</p>
+      <p class="lp-teks">Pihak Pengantin Perempuan</p>
+      <div class="lp-kontak" id="lpKontak"></div>
+    </section>
+
+    <!-- 10. LOKASI (sasaran dock "Lokasi") -->
+    <section class="lp-sec lp-sec--panel lp-lokasi reveal" id="lokasi">
+      <span class="lp-deko lp-botani lp-rb-clematis lp-b-lokasi" aria-hidden="true"></span>
+      <p class="lp-label">Lokasi Majlis</p>
+      <p class="lp-teks">ADH Hall, Kota Marudu</p>
+      <a class="lp-btn-besar" href="https://www.google.com/maps/place/ADH+Hall/@6.4574857,116.7776901,17z/data=!4m6!3m5!1s0x323a494c15034071:0x96df07963654b267!8m2!3d6.4577042!4d116.777615!16s%2Fg%2F11wwz0ds1f" target="_blank" rel="noopener">
+        <span class="lp-btn-ikon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+            <path d="M12 21c4.2-4.2 6.3-7.6 6.3-10.6A6.3 6.3 0 0 0 5.7 10.4C5.7 13.4 7.8 16.8 12 21Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="12" cy="10.2" r="2.3" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </span>
+        Buka di Google Maps
+      </a>
+      <!-- QR lokasi: paparan terus (bukan lipat) di bawah butang Maps yang kekal utama.
+           Imej lazy + dimensi eksplisit (fail 420x420 => papar 200x200) supaya layout
+           stabil walaupun imej gagal muat (alt kekal, kotak tak kolaps). -->
+      <div class="lp-lokasi-qr">
+        <img class="lp-lokasi-qr-imej" src="./qrLokasiAdhHall.jpeg" width="200" height="200" loading="lazy" decoding="async" alt="Kod QR untuk membuka lokasi ADH Hall di Google Maps" />
+        <p class="lp-lokasi-qr-caption">Imbas untuk buka lokasi di peta, sesuai untuk dikongsi atau dicetak.</p>
+      </div>
+    </section>
+
+    <!-- 11. SALAM KAUT / HADIAH (dalam aliran halaman, sebelum doa penutup)
+         Butang CTA = <button> (BUKAN <a>) supaya modalInit (pintas a[href=rsvp.html])
+         dan dockInit abaikan; modalHadiahInit dalam landing.js yang bukanya (guna semula
+         modal #lpModalHadiah yang sama dengan dock, tiada duplikasi markup modal).
+         QR penuh HANYA dalam popup (permintaan user), seksyen ni label + ayat + CTA sahaja. -->
+    <section class="lp-sec lp-sec--panel lp-kanvas-tamat lp-salamkaut reveal">
+      <span class="lp-deko lp-botani lp-rb-srosblush lp-b-salamkaut" aria-hidden="true"></span>
+      <h2 class="lp-kepala">Salam Kaut</h2>
+      <p class="lp-teks">Kehadiran serta doa restu Tuan / Puan sudah amat bermakna buat kami. Andai ada yang ingin menghulurkan tanda kasih, keikhlasan anda amat kami hargai.</p>
+      <button class="lp-btn-besar lp-salamkaut-cta" id="lpSalamKautCta" type="button" aria-haspopup="dialog" aria-controls="lpModalHadiah">
+        <span class="lp-btn-ikon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M4.5 11.5h15V19a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 4.5 19v-7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3.5 8.3h17v3.2h-17z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 8.3v12.2" stroke="currentColor" stroke-width="1.5"/><path d="M12 8.3C11.2 5.4 6.7 5.4 7.6 8.3M12 8.3C12.8 5.4 17.3 5.4 16.4 8.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Salam Kaut
+      </button>
+      <div class="lp-ornamen" aria-hidden="true"><i></i></div>
+    </section>
+
+    <!-- 12. PENUTUP -->
+    <section class="lp-sec lp-penutup reveal">
+      <span class="lp-deko lp-bunga-footer lp-bunga-footer--kiri lp-bouquet-a" aria-hidden="true"></span>
+      <span class="lp-deko lp-bunga-footer lp-bunga-footer--kanan lp-bouquet-b" aria-hidden="true"></span>
+      <h2 class="lp-kepala">Doa Buat Pengantin</h2>
+      <!-- Teks doa penuh disalin SEBIJI dari kad Canva rasmi pasangan (permintaan user 15 Ogos). -->
+      <p class="lp-doa">Ya Allah, Tuhan yang Maha Pengasih, Kami memohon kepada-Mu agar Engkau memberkati perkahwinan mereka.</p>
+      <p class="lp-doa">Kurniakanlah mereka kebahagiaan, saling memahami, dan kasih sayang yang berkekalan.</p>
+      <p class="lp-doa">Ya Allah, limpahkanlah mereka rezeki yang mencukupi dan kesihatan yang baik. Lindungilah mereka daripada segala kesulitan dan berilah mereka kekuatan untuk menghadapi cabaran bersama.</p>
+      <p class="lp-doa">Anugerahkanlah mereka anak-anak yang soleh dan solehah, dan jadikanlah rumah tangga mereka penuh dengan keberkatan dan kedamaian.</p>
+      <p class="lp-doa lp-doa--amin">Aamiin Ya Rabbal Alamin.</p>
+      <p class="lp-teks">Semoga kehadiran Tuan / Puan menyerikan lagi majlis dan diberkati Allah SWT.</p>
+      <p class="lp-terima">Terima Kasih</p>
+      <!-- Monogram penutup: versi kecil gaya sama (huruf serif + ampersand script +
+           garis emas), warna maroon/emas ikut tema kad. Selaras cover, TIADA bulatan
+           dasharray lama. -->
+      <div class="lp-penutup-mono" aria-hidden="true">
+        <span class="lp-mono-garis lp-mono-garis--atas"></span>
+        <span class="lp-mono-huruf">
+          <span class="lp-mono-k">K</span>
+          <span class="lp-mono-amp">&amp;</span>
+          <span class="lp-mono-a">A</span>
+        </span>
+        <span class="lp-mono-garis lp-mono-garis--bawah"></span>
+      </div>
+    </section>
+
+    <footer class="lp-footer">Khadizah &amp; Anwar &middot; 30 Ogos 2026 &middot; ADH Hall, Kota Marudu</footer>
+  </main>
+
+  <!-- ============ DOCK NAVIGASI TERAPUNG ============ -->
+  <nav class="lp-dock" id="lpDock" aria-label="Navigasi laman">
+    <a class="lp-dock-btn" href="#tarikh">
+      <span class="lp-dock-ikon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><rect x="4" y="5.5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 9.5h16M8 4v3M16 4v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </span>
+      <span class="lp-dock-teks">Tarikh</span>
+    </a>
+    <a class="lp-dock-btn" href="#lokasi">
+      <span class="lp-dock-ikon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 21c4-4 6-7.2 6-10A6 6 0 0 0 6 11c0 2.8 2 6 6 10Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.1" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>
+      <span class="lp-dock-teks">Lokasi</span>
+    </a>
+    <a class="lp-dock-btn lp-dock-btn--utama" href="./rsvp.html">
+      <span class="lp-dock-ikon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M5 6.5h14M5 12h14M5 17.5h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16.5 17.5l2 2 3.5-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="lp-dock-teks">RSVP</span>
+    </a>
+    <a class="lp-dock-btn" href="#hubungi">
+      <span class="lp-dock-ikon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M7 4.5c.6 0 1.1.4 1.3 1l.9 2.7c.2.6 0 1.2-.5 1.6l-1.2 1a12 12 0 0 0 4.7 4.7l1-1.2c.4-.5 1-.7 1.6-.5l2.7.9c.6.2 1 .7 1 1.3V19c0 .8-.7 1.5-1.5 1.5A13.5 13.5 0 0 1 5.5 7 1.5 1.5 0 0 1 7 4.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="lp-dock-teks">Hubungi</span>
+    </a>
+    <!-- Butang ke-6: buka modal Salam Kaut (QR hadiah). BUTANG (bukan <a>) supaya
+         dockInit (pintas #anchor) dan modal RSVP (pintas a[href=rsvp.html]) abaikan;
+         modalHadiahInit dalam landing.js yang uruskan. -->
+    <button class="lp-dock-btn lp-dock-btn--hadiah" id="lpDockHadiah" type="button" aria-haspopup="dialog" aria-controls="lpModalHadiah">
+      <span class="lp-dock-ikon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4.5 11.5h15V19a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 4.5 19v-7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3.5 8.3h17v3.2h-17z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 8.3v12.2" stroke="currentColor" stroke-width="1.5"/><path d="M12 8.3C11.2 5.4 6.7 5.4 7.6 8.3M12 8.3C12.8 5.4 17.3 5.4 16.4 8.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="lp-dock-teks">Hadiah</span>
+    </button>
+  </nav>
+
+  <!-- ============ BUTANG MUZIK ============
+       Elemen <audio> HTML5 (./laguMajlis.mp3, same-origin) dicipta lewat landing.js dan
+       dimainkan SEGERAK dalam gesture tekan cover. Same-origin dipilih ganti YouTube
+       kerana iOS Safari sekat audio iframe cross-origin. Kalau fail gagal muat, butang
+       senyap sahaja (guard + event 'error' dalam landing.js), page tak rosak. -->
+  <button class="lp-muzik" id="lpMuzik" type="button" aria-pressed="false" aria-label="Main muzik latar">
+    <span class="lp-muzik-ikon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+        <path d="M9 18V6l10-2v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="6.5" cy="18" r="2.6" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="16.5" cy="16" r="2.6" stroke="currentColor" stroke-width="1.6"/>
+      </svg>
+    </span>
+  </button>
+
+  <!-- ============ MODAL RSVP ============
+       Butang menuju rsvp.html (CTA RSVP, dock RSVP, "Berikan Ucapan") dipintas oleh
+       landing.js untuk buka borang dalam modal ATAS landing, bukan navigasi keluar.
+       Kandungan = iframe rsvp.html?embed=1 (guna semula borang + Firebase, tiada
+       duplikasi logik), dicipta lazy pada buka pertama. Kalau JS gagal, href asal
+       dalam butang buat navigasi biasa (progressive enhancement). -->
+  <div class="lp-modal" id="lpModal" hidden>
+    <div class="lp-modal-overlay" data-lp-tutup aria-hidden="true"></div>
+    <div class="lp-modal-kad" role="dialog" aria-modal="true" aria-label="Borang RSVP kehadiran">
+      <div class="lp-modal-header">
+        <span class="lp-modal-tajuk">RSVP Kehadiran</span>
+        <button class="lp-modal-tutup" id="lpModalTutup" type="button" aria-label="Tutup borang RSVP">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="lp-modal-badan" id="lpModalBadan"></div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL SALAM KAUT (hadiah / QR DuitNow) ============
+       Guna semula shell .lp-modal* (tiada duplikasi CSS shell). Dibuka oleh butang
+       dock "Hadiah" lewat modalHadiahInit dalam landing.js. Kandungan statik (QR +
+       panduan 3 langkah untuk tetamu yang tengok di telefon sendiri, kerana mereka
+       tak boleh imbas skrin telefon sendiri). QR lazy: dalam modal hidden, jadi hanya
+       muat bila dibuka. -->
+  <div class="lp-modal lp-modal--hadiah" id="lpModalHadiah" hidden>
+    <div class="lp-modal-overlay" data-lp-tutup aria-hidden="true"></div>
+    <div class="lp-modal-kad lp-modal-kad--hadiah" role="dialog" aria-modal="true" aria-labelledby="lpHadiahTajuk">
+      <div class="lp-modal-header">
+        <span class="lp-modal-tajuk" id="lpHadiahTajuk">Salam Kaut</span>
+        <button class="lp-modal-tutup" id="lpModalHadiahTutup" type="button" aria-label="Tutup Salam Kaut">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="lp-modal-badan lp-modal-badan--hadiah">
+        <p class="lp-teks lp-hadiah-intro">Buat yang sudi menghulur tanda kasih, boleh guna QR di bawah. Semoga Allah membalas kemurahan hati anda.</p>
+        <figure class="lp-qr-kad">
+          <img class="lp-qr-imej" src="./qrSalamKaut.jpeg" width="280" height="280" loading="lazy" decoding="async" alt="Kod QR DuitNow atas nama Khadizah Razali untuk salam kaut" />
+        </figure>
+        <p class="lp-qr-nama">Khadizah Razali</p>
+        <p class="lp-qr-bank">DuitNow QR &middot; BSN</p>
+        <ol class="lp-qr-panduan">
+          <li><span class="lp-qr-langkah-no" aria-hidden="true">1</span><span>Simpan gambar QR ini dahulu, tekan lama atau ambil <em>screenshot</em>.</span></li>
+          <li><span class="lp-qr-langkah-no" aria-hidden="true">2</span><span>Buka app bank atau e-wallet anda, pilih imbas QR.</span></li>
+          <li><span class="lp-qr-langkah-no" aria-hidden="true">3</span><span>Pilih gambar QR tadi dari galeri untuk teruskan.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ KELOPAK JATUH SELURUH HALAMAN (permintaan user) ============
+       Lapisan FIXED penuh viewport, kelopak plum halus jatuh berterusan dari cover
+       terbuka sampai footer (ikut viewport, bukan posisi dokumen, jadi jatuh di mana
+       sahaja tetamu skrol). Duduk ATAS kandungan (z 55) tapi BAWAH dock/muzik/cover/
+       modal; opacity rendah patuh siling laluan teks (deep<=0.15 dst), pointer-events
+       none. Digate .lp-js (JS mati = halaman statik tulen) dan dimatikan reduced-motion.
+       Guna aset .bunga--* sedia ada (SVG eksplisit, teruji WebKit, kini tona plum). -->
+  <!-- Populasi SERI (verdict timbang Petang Keemasan): kelopak plum lama hampir
+       halimunan atas panel = punca "suram". Kini 14 biji, 3 jenis cerah bertepi emas
+       (lilac tengah hangat / ivory-champagne / emas), op 0.28-0.42, kelas cerah
+       dibenarkan melepasi siling hiasan gelap (tak menenggelamkan teks maroon). -->
+  <div class="lp-kelopak-lapis" aria-hidden="true">
+    <span class="lp-klp lp-klp--ivory" style="--x:7%;  --size:26px; --dur:16s; --delay:0s;    --drift:26px;  --op:0.46; --spin:200deg"></span>
+    <span class="lp-klp lp-klp--lilac" style="--x:18%; --size:20px; --dur:21s; --delay:-7s;   --drift:-20px; --op:0.52; --spin:-160deg"></span>
+    <span class="lp-klp lp-klp--emas"  style="--x:29%; --size:17px; --dur:18s; --delay:-13s;  --drift:22px;  --op:0.36; --spin:240deg"></span>
+    <span class="lp-klp lp-klp--lilac" style="--x:38%; --size:16px; --dur:24s; --delay:-3s;   --drift:-16px; --op:0.48; --spin:150deg"></span>
+    <span class="lp-klp lp-klp--ivory" style="--x:47%; --size:22px; --dur:19s; --delay:-16s;  --drift:18px;  --op:0.44; --spin:-210deg"></span>
+    <span class="lp-klp lp-klp--lilac" style="--x:56%; --size:19px; --dur:23s; --delay:-9s;   --drift:-24px; --op:0.52; --spin:180deg"></span>
+    <span class="lp-klp lp-klp--ivory" style="--x:65%; --size:24px; --dur:17s; --delay:-5s;   --drift:20px;  --op:0.46; --spin:-190deg"></span>
+    <span class="lp-klp lp-klp--emas"  style="--x:74%; --size:16px; --dur:26s; --delay:-19s;  --drift:-14px; --op:0.34; --spin:140deg"></span>
+    <span class="lp-klp lp-klp--lilac" style="--x:83%; --size:21px; --dur:20s; --delay:-11s;  --drift:24px;  --op:0.54; --spin:220deg"></span>
+    <span class="lp-klp lp-klp--ivory" style="--x:92%; --size:28px; --dur:15s; --delay:-2s;   --drift:-26px; --op:0.48; --spin:-230deg"></span>
+    <span class="lp-klp lp-klp--lilac" style="--x:12%; --size:17px; --dur:22s; --delay:-18s;  --drift:16px;  --op:0.50; --spin:170deg"></span>
+    <span class="lp-klp lp-klp--ivory" style="--x:87%; --size:16px; --dur:25s; --delay:-14s;  --drift:-18px; --op:0.40; --spin:-150deg"></span>
+    <span class="lp-klp lp-klp--emas"  style="--x:52%; --size:15px; --dur:27s; --delay:-21s;  --drift:14px;  --op:0.36; --spin:160deg"></span>
+    <span class="lp-klp lp-klp--lilac" style="--x:97%; --size:18px; --dur:24s; --delay:-6s;   --drift:-20px; --op:0.52; --spin:-170deg"></span>
+  </div>
+
+  <script type="module" src="./landing.js?v=20260819a"></script>
+</body>
+</html>

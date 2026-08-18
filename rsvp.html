@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Khadizah &amp; Anwar , RSVP</title>
+  <meta name="description" content="Sila sahkan kehadiran anda ke majlis perkahwinan Khadizah & Anwar, Ahad 30 Ogos 2026." />
+
+  <!-- Open Graph / Twitter: preview kaya bila link disebar di WhatsApp/media sosial -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Khadizah & Anwar" />
+  <meta property="og:title" content="RSVP, Khadizah & Anwar" />
+  <meta property="og:description" content="Sahkan kehadiran anda ke Majlis Perkahwinan Khadizah & Anwar, Ahad 30 Ogos 2026." />
+  <meta property="og:url" content="https://adiburth-personal.github.io/jemputanKahwinKA/rsvp.html" />
+  <meta property="og:image" content="https://adiburth-personal.github.io/jemputanKahwinKA/ogImage.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RSVP, Khadizah & Anwar" />
+  <meta name="twitter:description" content="Sahkan kehadiran anda ke Majlis Perkahwinan Khadizah & Anwar, Ahad 30 Ogos 2026." />
+  <meta name="twitter:image" content="https://adiburth-personal.github.io/jemputanKahwinKA/ogImage.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css?v=20260819a" />
+
+  <!-- Mod embed (?embed=1): bila rsvp.html dimuat dalam modal iframe laman jemputan,
+       tambah kelas pada <html> SEGERAK (elak flash hero sebelum dimampatkan) untuk
+       memampatkan paparan (sorok krest/hero besar + jemputan-teks + nav, kurang
+       padding). TANPA query, halaman kekal SAMA macam sebelum (disebar terus dalam
+       kad Canva), jadi jangan rosakkan. Defensif: gagal parse = biar rupa penuh. -->
+  <script>try{if(new URLSearchParams(location.search).has("embed"))document.documentElement.className+=" rsvp-embed";}catch(e){}</script>
+  <style>
+    /* FIX A (ujian telefon): dalam modal, header sticky "RSVP KEHADIRAN" duduk terus
+       atas kandungan iframe. Bila iframe di posisi skrol paling atas, tajuk pertama
+       kandungan rapat/terlindung header. Beri padding-top lebih lega supaya kandungan
+       bermula di bawah header dengan ruang bernafas. Hanya mod embed (paparan biasa
+       rsvp.html kekal tak berubah). */
+    html.rsvp-embed .wrap { padding-top: var(--space-7); padding-bottom: var(--space-6); }
+    html.rsvp-embed .header { margin-bottom: var(--space-5); animation: none; }
+    html.rsvp-embed .header .ornamen,
+    html.rsvp-embed .krest { display: none; }
+    html.rsvp-embed .nama-script { font-size: clamp(2.2rem, 12vw, 2.8rem); }
+    html.rsvp-embed .nama-serif { margin-top: var(--space-3); font-size: var(--text-base); }
+    html.rsvp-embed .jemputan-teks { display: none; }
+    html.rsvp-embed .nav-halaman { display: none; }
+    /* FIX B (ujian telefon): span hiasan bulatan radio (.tanda) menangkap tap, jadi
+       tap TEPAT atas bulatan tak sampai ke <label>/<input> -> tak terpilih. Biar tap
+       tembus ke label. Tak scope embed: pembetulan sah untuk rsvp.html standalone juga
+       (borang sama). Tiada kesan lain , .tanda cuma hiasan aria-hidden. */
+    .pilihan .tanda { pointer-events: none; }
+
+    /* ===================== TEMA LILAC (standalone + embed) =====================
+       Identiti warna laman kini LILAC. Laman jemputan (index.html) lilac secara
+       default, dan borang ini dipapar dua cara: (a) STANDALONE, rsvp.html dibuka
+       terus tanpa query (disebar dalam kad Canva/link WhatsApp); dan (b) EMBED,
+       dimuat dalam modal iframe (rsvp.html?embed=1) ATAS laman lilac. Kedua-dua kes
+       mesti sekeluarga lilac supaya konsisten dengan landing (tiada "seam" kraft/tan).
+
+       Strategi = sama macam blok tema lilac landing.css: override 4 TOKEN surface
+       (kraft/kraft-deep/cream/cream-2) dalam skop :root supaya SEMUA elemen ikut
+       automatik , latar body + gradien sudut, hero krest, kad borang, input/select/
+       textarea, pilihan radio, butang, notis, terima kasih, nav halaman, footer. Teks
+       kekal maroon/ink gelap. Override ini terpakai untuk standalone DAN embed (embed
+       cuma tambah pemampatan hero di atas, tokennya sama). Teks-atas-body standalone
+       (eyebrow, nama, tarikh, footer, pautan nav) kini duduk atas lilac #dccfee yang
+       LEBIH cerah daripada tan lama #cabba5, jadi kontras naik, bukan turun.
+
+       SEMUA kombinasi teks atas surface baru disahkan >=4.5:1 (teks besar >=3:1)
+       (scratchpad/contrastStandalone.py: julat 5.9 hingga 12.9:1). Specificity :root
+       (0,1,0) sama dengan blok oklch styles.css (0,1,0) TAPI blok <style> ini datang
+       SELEPAS <link> styles.css dalam sumber, jadi menang ikut susunan cascade,
+       merentas semua pelayar termasuk WebKit. */
+    :root {
+      --color-kraft: #dccfee;       /* latar body (lilac, bukan tan) , teks hero duduk sini */
+      --color-kraft-deep: #c9b9e0;  /* gradien bayang sudut body -> kekal lilac, tiada tompok tan */
+      --color-cream: #f3eefa;       /* kad borang + teks butang atas maroon + panel terima kasih */
+      --color-cream-2: #e7ddf3;     /* input/select/textarea + kotak pilihan radio (panel lilac muda) */
+    }
+    /* Peningkatan oklch styles.css (@supports) menetapkan token ini dalam ruang oklch
+       dengan specificity :root (0,1,0) sama. Blok :root hex di atas datang lebih lewat
+       dalam susunan sumber, jadi ia sudah menang tanpa @supports. Tetapi untuk pelayar
+       yang memilih laluan oklch pada token LAIN (maroon/ink/line dll dikira dalam oklch),
+       kita biar token surface ini kekal hex , hex lilac ini adalah nilai muktamad yang
+       dikehendaki, konsisten dengan blok tema lilac landing.css. */
+
+    /* ============ ANCHOR BOTANI (bahasa design landing di halaman borang) ============
+       Dua sentuhan watercolor sahaja, di margin, JAUH dari borang (teks mesti menang).
+       Disorok dalam mod embed: modal iframe sempit, hiasan jadi bising di situ. */
+    .rsvp-botani {
+      position: fixed; z-index: 0; pointer-events: none;
+      background-repeat: no-repeat; background-position: center; background-size: contain;
+    }
+    .rsvp-botani--atas {
+      top: -18px; right: -22px; width: min(34vw, 150px); aspect-ratio: 300/409;
+      background-image: url("./aset/bunga/plumBlush.webp"); opacity: 0.85; transform: rotate(8deg) scaleX(-1);
+    }
+    .rsvp-botani--bawah {
+      bottom: -14px; left: -16px; width: min(24vw, 96px); aspect-ratio: 240/327;
+      background-image: url("./aset/bunga/sprigClematis.webp"); opacity: 0.7; transform: rotate(-4deg);
+    }
+    html.rsvp-embed .rsvp-botani { display: none; }
+    .wrap { position: relative; z-index: 1; }   /* kandungan borang sentiasa atas hiasan */
+  </style>
+</head>
+<body>
+  <span class="rsvp-botani rsvp-botani--atas" aria-hidden="true"></span>
+  <span class="rsvp-botani rsvp-botani--bawah" aria-hidden="true"></span>
+  <main class="wrap">
+
+    <!-- Notis kalau tetapan Firebase belum diisi -->
+    <div class="notis-setup" id="notisSetup" role="status">
+      <strong>Setup belum lengkap</strong>
+      <p>Sambungan pangkalan data belum disetkan. Borang RSVP dan dinding ucapan akan aktif sebaik sahaja tetapan Firebase diisi. Buat masa ini anda boleh lihat rekaan laman.</p>
+    </div>
+
+    <!-- Header pengantin -->
+    <header class="header">
+      <p class="eyebrow">Walimatulurus</p>
+      <h1 class="nama-script">Khadizah &amp; Anwar</h1>
+      <p class="nama-serif">Khadizah Binti Razali<br />&amp; Muhammad Anwar Bin Sawal</p>
+
+      <!-- Krest hero botani (SVG halus): aksen ungu tumpu + titik emas sebagai
+           isyarat "majlis sama" dengan kad jemputan. Warna dipacu token CSS. -->
+      <svg class="ornamen krest" width="150" height="34" viewBox="0 0 150 34" fill="none" aria-hidden="true">
+        <path class="krest-rule" d="M14 17h40" stroke-width="1" stroke-linecap="round"/>
+        <path class="krest-rule" d="M96 17h40" stroke-width="1" stroke-linecap="round"/>
+        <g class="krest-daun" stroke-width="1" fill="none">
+          <path d="M60 17c4-6 8-7 10-5s0 7-5 8"/>
+          <path d="M90 17c-4-6-8-7-10-5s0 7 5 8"/>
+          <path d="M75 6c-4 4-4 8-1 10"/>
+          <path d="M75 6c4 4 4 8 1 10"/>
+        </g>
+        <circle class="krest-nadi" cx="75" cy="18" r="3.4"/>
+        <circle class="krest-emas" cx="56" cy="17" r="1.8"/>
+        <circle class="krest-emas" cx="94" cy="17" r="1.8"/>
+      </svg>
+
+      <p class="tarikh">Ahad, 30 Ogos 2026<br />17 Rabiulawal 1448H</p>
+      <p class="masa">11:00 pagi hingga 6:00 petang</p>
+      <p class="tempat">ADH Hall, Kota Marudu</p>
+      <p class="jemputan-teks">Dengan penuh kesyukuran, kami menjemput anda meraikan hari bahagia kami. Sudi sudikanlah mengesahkan kehadiran di bawah.</p>
+    </header>
+
+    <!-- Kad RSVP -->
+    <section class="kad" aria-labelledby="tajukRsvp">
+      <h2 class="seksyen-tajuk" id="tajukRsvp">Kehadiran Tetamu</h2>
+      <p class="seksyen-sari">Mohon sahkan kehadiran anda</p>
+
+      <form id="borangRsvp" novalidate>
+        <div class="medan">
+          <label class="medan-label" for="nama">Nama Penuh <span class="wajib">(wajib)</span></label>
+          <input class="input" type="text" id="nama" name="nama" maxlength="80" autocomplete="name"
+                 placeholder="Contoh: Ahmad bin Yusof" required aria-describedby="ralatNama" />
+          <p class="ralat-medan" id="ralatNama">Sila isi nama anda.</p>
+        </div>
+
+        <div class="medan">
+          <span class="medan-label" id="labelStatus">Adakah anda dapat hadir? <span class="wajib">(wajib)</span></span>
+          <div class="pilihan" role="radiogroup" aria-labelledby="labelStatus">
+            <label>
+              <input type="radio" name="status" value="hadir" />
+              <span class="tanda" aria-hidden="true"></span>
+              <span class="pilihan-teks">Ya, saya hadir</span>
+            </label>
+            <label>
+              <input type="radio" name="status" value="tidak" />
+              <span class="tanda" aria-hidden="true"></span>
+              <span class="pilihan-teks">Maaf, tidak dapat hadir</span>
+            </label>
+          </div>
+          <p class="ralat-medan" id="ralatStatus">Sila pilih sama ada anda hadir atau tidak.</p>
+        </div>
+
+        <div class="medan medan-pax" id="medanPax">
+          <label class="medan-label" for="pax">Bilangan Kehadiran <span style="font-weight:400;">(termasuk diri anda)</span></label>
+          <select class="select" id="pax" name="pax">
+            <option value="1">1 orang</option>
+            <option value="2">2 orang</option>
+            <option value="3">3 orang</option>
+            <option value="4">4 orang</option>
+            <option value="5">5 orang</option>
+            <option value="6">6 orang</option>
+            <option value="7">7 orang</option>
+            <option value="8">8 orang</option>
+            <option value="9">9 orang</option>
+            <option value="10">10 orang</option>
+          </select>
+        </div>
+
+        <div class="medan">
+          <label class="medan-label" for="ucapan">Ucapan &amp; Doa <span style="font-weight:400;">(pilihan)</span></label>
+          <textarea class="textarea" id="ucapan" name="ucapan" maxlength="1000"
+                    placeholder="Titipkan sepatah dua kata untuk pengantin..."></textarea>
+        </div>
+
+        <button class="butang" type="submit" id="butangHantar">Hantar Kehadiran</button>
+      </form>
+
+      <!-- Keadaan terima kasih (dipapar selepas berjaya) -->
+      <div class="terima-kasih" id="terimaKasih" role="status">
+        <p class="nama-script">Terima kasih</p>
+        <p id="terimaKasihTeks"></p>
+      </div>
+    </section>
+
+    <p class="nav-halaman">
+      <a class="pautan-halus" href="./index.html">&larr; Kembali ke laman jemputan</a>
+    </p>
+
+    <footer class="footer">Khadizah &amp; Anwar &middot; 30 Ogos 2026</footer>
+  </main>
+
+  <!-- JAMBATAN ESC (mod embed SAHAJA): bila borang ini dimuat dalam modal iframe laman
+       jemputan, fokus di dalam medan borang MENYERAP keydown Esc (tak sampai ke dokumen
+       induk), jadi Esc tak menutup modal. Di sini kita dengar Esc dan hantar postMessage
+       ringkas "lp-rsvp-esc" ke induk (same-origin) supaya landing.js boleh tutup modal.
+       Hanya aktif bila kelas rsvp-embed wujud (paparan standalone tak terjejas). Defensif. -->
+  <script>
+    try {
+      if (document.documentElement.classList.contains("rsvp-embed")) {
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" || e.key === "Esc") {
+            try { parent.postMessage("lp-rsvp-esc", location.origin); } catch (err) {}
+          }
+        });
+      }
+    } catch (e) {}
+  </script>
+
+  <script type="module" src="./app.js?v=20260819a"></script>
+</body>
+</html>

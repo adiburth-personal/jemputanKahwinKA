@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ringkasan RSVP , Khadizah &amp; Anwar</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css?v=20260815q" />
+  <style>
+    /* TEMA LILAC (samakan dengan rsvp.html/ucapan.html): papan pengantin ikut
+       keluarga warna lilac yang sama, override 4 token surface sahaja. */
+    :root {
+      --color-kraft: #dccfee;
+      --color-kraft-deep: #c9b9e0;
+      --color-cream: #f3eefa;
+      --color-cream-2: #e7ddf3;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- Notis kalau tetapan Firebase belum diisi -->
+    <div class="notis-setup" id="notisSetup" role="status">
+      <strong>Setup belum lengkap</strong>
+      <p>Sambungan pangkalan data belum disetkan. Ringkasan RSVP akan aktif sebaik sahaja tetapan Firebase diisi.</p>
+    </div>
+
+    <!-- Halaman tiada akses (kunci salah / tiada kunci) -->
+    <section class="tiada-akses" id="tiadaAkses" style="display:none;">
+      <svg class="ornamen" width="90" height="26" viewBox="0 0 90 26" fill="none" aria-hidden="true">
+        <path d="M6 13h26M58 13h26" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+        <circle cx="45" cy="13" r="2.4" fill="currentColor"/>
+      </svg>
+      <h1 class="seksyen-tajuk">Halaman peribadi</h1>
+      <p>Maaf, halaman ini khas untuk pengantin sahaja. Sila gunakan pautan lengkap yang mengandungi kunci akses.</p>
+    </section>
+
+    <!-- Papan pengantin (dipapar bila kunci betul) -->
+    <div id="papan" style="display:none;">
+      <header class="header">
+        <p class="eyebrow">Papan Pengantin</p>
+        <h1 class="nama-script">Khadizah &amp; Anwar</h1>
+        <p class="masa">Ringkasan kehadiran langsung</p>
+      </header>
+
+      <section class="kad">
+        <div class="ringkasan">
+          <div class="stat">
+            <div class="stat-nombor" id="statEntriHadir">0</div>
+            <span class="stat-label">Entri Hadir</span>
+          </div>
+          <div class="stat">
+            <div class="stat-nombor" id="statPax">0</div>
+            <span class="stat-label">Jumlah Orang</span>
+          </div>
+          <div class="stat">
+            <div class="stat-nombor" id="statTidak">0</div>
+            <span class="stat-label">Tidak Hadir</span>
+          </div>
+        </div>
+
+        <h2 class="seksyen-tajuk" style="font-size:var(--text-lg);">Senarai Tetamu</h2>
+        <div class="jadual-bungkus">
+          <table class="jadual">
+            <thead>
+              <tr><th>Nama</th><th>Status</th><th>Orang</th></tr>
+            </thead>
+            <tbody id="jadualBadan"></tbody>
+          </table>
+        </div>
+        <div class="kosong" id="senaraiKosong">Belum ada RSVP diterima.</div>
+      </section>
+
+      <section class="kad">
+        <h2 class="seksyen-tajuk" style="font-size:var(--text-lg);">Semua Ucapan</h2>
+        <div class="ucapan-senarai" id="ucapanSenarai"></div>
+        <div class="kosong" id="ucapanKosong">Belum ada ucapan lagi.</div>
+      </section>
+
+      <footer class="footer">Khadizah &amp; Anwar &middot; 30 Ogos 2026</footer>
+    </div>
+
+  </main>
+
+  <script type="module" src="./pengantin.js?v=20260815e"></script>
+</body>
+</html>

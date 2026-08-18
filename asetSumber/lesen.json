@@ -1,0 +1,130 @@
+[
+ {
+  "peranan": "bouquetAnemone",
+  "fail": "set1RedouteChoix/bouquetAnemone.jpg",
+  "title": "File:Choix des plus belles fleurs (Plate 107) (7851493962).jpg",
+  "lesen": "Public domain",
+  "halaman": "https://commons.wikimedia.org/wiki/File:Choix_des_plus_belles_fleurs_(Plate_107)_(7851493962).jpg",
+  "asal": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Choix_des_plus_belles_fleurs_%28Plate_107%29_%287851493962%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "lebar": 1239,
+  "tinggi": 1729
+ },
+ {
+  "peranan": "rosBlushPucat",
+  "fail": "set1RedouteChoix/rosBlushPucat.jpg",
+  "title": "File:Redoute - Rosa centifolia foliacea.jpg",
+  "lesen": "Public domain",
+  "halaman": "https://commons.wikimedia.org/wiki/File:Redoute_-_Rosa_centifolia_foliacea.jpg",
+  "asal": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Redoute_-_Rosa_centifolia_foliacea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "lebar": 1408,
+  "tinggi": 2029
+ },
+ {
+  "peranan": "rosKuning",
+  "fail": "set1RedouteChoix/rosKuning.jpg",
+  "title": "File:Choix des plus belles fleurs (Plate 116) (7851501602).jpg",
+  "lesen": "Public domain",
+  "halaman": "https://commons.wikimedia.org/wiki/File:Choix_des_plus_belles_fleurs_(Plate_116)_(7851501602).jpg",
+  "asal": "https://upload.wikimedia.org/wikipedia/commons/1/12/Choix_des_plus_belles_fleurs_%28Plate_116%29_%287851501602%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "lebar": 1195,
+  "tinggi": 1620
+ },
+ {
+  "peranan": "daisyPutih",
+  "fail": "set1RedouteChoix/daisyPutih.jpg",
+  "title": "File:Leucanthemum vulgare Sturm13050.jpg",
+  "lesen": "Public domain",
+  "halaman": "https://commons.wikimedia.org/wiki/File:Leucanthemum_vulgare_Sturm13050.jpg",
+  "asal": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Leucanthemum_vulgare_Sturm13050.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "lebar": 801,
+  "tinggi": 1200
+ },
+ {
+  "peranan": "babysBreath",
+  "fail": "set1RedouteChoix/babysBreath.jpg",
+  "title": "File:Gypsophila paniculata — Flora Batava — Volume v20.jpg",
+  "lesen": "Public domain",
+  "halaman": "https://commons.wikimedia.org/wiki/File:Gypsophila_paniculata_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v20.jpg",
+  "asal": "https://upload.wikimedia.org/wikipedia/commons/8/81/Gypsophila_paniculata_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v20.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "lebar": 2044,
+  "tinggi": 2724
+ },
+ {
+  "peranan": "dahliaBlush",
+  "fail": "set2Ensiklopedia/dahliaBlush.jpg",
+  "title": "File:Addisonia - colored illustrations and popular descriptions of plants (1916-(1964)) (16771637141).jpg",
+  "lesen": "No restrictions",
+  "halaman": "https://commons.wikimedia.org/wiki/File:Addisonia_-_colored_illustrations_and_popular_descriptions_of_plants_(1916-(1964))_(16771637141).jpg",
+  "asal": "https://upload.wikimedia.org/wikipedia/commons/0/08/Addisonia_-_colored_illustrations_and_popular_descriptions_of_plants_%281916-%281964%29%29_%2816771637141%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "lebar": 2199,
+  "tinggi": 3655
+ },
+ {
+  "peranan": "hydrangeaLine",
+  "fail": "set3LineArtD9/hydrangeaLine.png",
+  "title": "File:Hydrangea cinerea drawing.png",
+  "lesen": "Public domain",
+  "halaman": "https://commons.wikimedia.org/wiki/File:Hydrangea_cinerea_drawing.png",
+  "asal": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Hydrangea_cinerea_drawing.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "lebar": 1595,
+  "tinggi": 1994
+ },
+ {
+  "warnaBouquetHero.webp": {
+   "sumber": "bouquetAnemone.jpg (Choix Plate 107, P.J. Redoute)",
+   "lesen": "Public domain",
+   "proses": "warnaAsli: warna asal harmoni, prosesWarna.py"
+  },
+  "warnaBouquetB.webp": {
+   "sumber": "bouquetRosAnemone.jpg (Choix, P.J. Redoute)",
+   "url": "https://commons.wikimedia.org/wiki/Category:Choix_des_plus_belles_fleurs",
+   "lesen": "Public domain",
+   "proses": "warnaAsli"
+  },
+  "warnaRosAtur.webp": {
+   "sumber": "rosBurgundy.jpg (Rosa gallica purpuro-violacea magna, Redoute)",
+   "url": "https://commons.wikimedia.org/wiki/File:Redoute_-_Rosa_gallica_purpuro-violacea_magna.jpg",
+   "lesen": "Public domain",
+   "proses": "warnaAsli"
+  },
+  "cvWisteria.webp": {
+   "sumber": "new_018 Wisteria, Naturalis RMNH.ART.677",
+   "url": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.ART.677_-_Wisteria",
+   "lesen": "Public domain",
+   "proses": "bersihPlum dari proc kolaj"
+  },
+  "cvFuchsia.webp": {
+   "sumber": "new_105 Fuchsia procumbens, NFNZ d126",
+   "url": "https://commons.wikimedia.org/wiki/File:Nfnz_d126_fuchsia_procumbens.jpg",
+   "lesen": "Public domain",
+   "proses": "duotone plum dari original + median denoise"
+  },
+  "pJasmine.webp": {
+   "sumber": "new_077 Jasmine, Janet Dick",
+   "url": "https://commons.wikimedia.org/wiki/File:Janet_Dick_-_Jasmine_-_8261.jpg",
+   "lesen": "Public domain",
+   "proses": "bersihPlum"
+  },
+  "pJasmineAfr.webp": {
+   "sumber": "new_080 Jasminum dichotomum, Luigi Balugani",
+   "lesen": "CC0",
+   "proses": "bersihPlum"
+  },
+  "pRosKuning.webp": {
+   "sumber": "kur_rosKuning (Rosa sulfurea, Redoute)",
+   "lesen": "Public domain",
+   "proses": "bersihPlum"
+  },
+  "pBabysIlust.webp": {
+   "sumber": "kur_babysBreathIlust (Gypsophila paniculata, plat ensiklopedia)",
+   "lesen": "Public domain",
+   "proses": "bersihPlum + ekstrak spray utama"
+  },
+  "pClematisU.webp": {
+   "sumber": "kur_clematisUngu (Clematis viticella, Redoute)",
+   "lesen": "Public domain",
+   "proses": "bersihPlum"
+  },
+  "nota": "new_082 (White Jasmine MET) DIGUGURKAN: lukisan terlalu pudar, hasil ekstrak scrappy (lesen kreatif, preseden cosmosHitam)."
+ }
+]
